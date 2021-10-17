@@ -1,0 +1,49 @@
+.film-card {
+    padding: 1px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.synopsis{
+    box-shadow: 5px 5px 7.5px rgb(219, 90, 90);
+    padding: 2rem;
+}
+
+.back-btn-large-screen{
+    display: none
+}
+  .back-btn-small-screen{
+    display: block
+}
+@media all and (min-width: 800px){
+    .back-btn-large-screen{
+        display: block
+    }
+      .back-btn-small-screen{
+        display: none
+    }
+    .film-card {
+        transform: skew(-20deg);
+        padding: 1px;
+        font-size: larger;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .synopsis{
+        box-shadow: 5px 5px 7.5px rgb(219, 90, 90);
+        padding: 2rem;
+    }
+    .character-card{
+        box-shadow: 5px 5px 15px rgb(158, 104, 104);
+        padding: 2rem;
+    }
+    .synopsis:hover{
+        transform: scale(1.01);
+        font-weight: bold;
+    }
+    .character-card:hover{
+        transform: scale(1.08);
+        cursor: pointer;
+    
+        background-color: aliceblue;
+    }
+}

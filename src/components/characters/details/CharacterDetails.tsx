@@ -1,15 +1,16 @@
 import React from 'react';
 import { useParams, Link, RouterProps } from '@reach/router';
 import { useQuery } from '@apollo/client';
-import { getPersonByName } from '../queries/queries';
+import { getPersonByName } from '../../queries/queries';
 import { Button, Card, Col, Row } from 'react-bootstrap';
-import Loader from '../shared/Loader'
 import styled from 'styled-components';
-import '../characters/style.css';
-import MyNavBar from '../shared/NavBar';
-import Error from '../shared/Error';
-import { Film } from '../types/types';
-import CenteredContainer from '../shared/CenteredContainer';
+import '../../characters/style.css';
+import './characterDetails.css';
+import MyNavBar from '../../shared/NavBar';
+import CenteredContainer from '../../shared/CenteredContainer';
+import Loader from '../../shared/Loader'
+import Error from '../../shared/Error';
+import { Film } from '../../types/types';
 
 const CharcterDetails = (props: RouterProps) => {
   const params = useParams();
@@ -43,9 +44,9 @@ const CharcterDetails = (props: RouterProps) => {
       <MyNavBar />
       <Container>
         <Wrapper>
-          <Header >
+          <Header className="pt-2">
             <h5 data-testid="character-name" className='d-inline'>Character {name.toUpperCase()}</h5>
-            <Link to={'/'}>
+            <Link to={'/'} className="back-btn-large-screen">
               <Button size='lg' variant='outline-secondary'>
                 Back to previous page{' '}
               </Button>
@@ -61,18 +62,17 @@ const CharcterDetails = (props: RouterProps) => {
           </Basic>
           <Row>
             {films.map(({ title, director, release_date, opening_crawl }: Film) => (
-              <Col lg={6} className='mb-4'>
+              <Col sm={12} lg={6} className='mb-4'>
                 <Card className='film-card'>
                   <Card.Header>
                     Episode : <Span>{title.toUpperCase()}</Span>
                   </Card.Header>
                   <Card.Body className='p-4'>
                     <Card.Text>
-                        <div className="d-flex justify-content-between">
-                      <p>Directed by <Span>{director}</Span></p> 
-                      <p>Realease Date <Span>{release_date}</Span></p>
-                      
-                        </div>
+                      <div className="d-flex justify-content-between flex-wrap">
+                        <p>Directed by <Span>{director}</Span></p> 
+                        <p>Realease Date <Span>{release_date}</Span></p>
+                      </div>
                     </Card.Text>
                     <Card.Text>
                       <p>
@@ -86,6 +86,14 @@ const CharcterDetails = (props: RouterProps) => {
             ))}
           </Row>
         </Wrapper>
+        <div className="pb-3 back-btn-small-screen">
+        <Link to={'/'} >
+              <Button size='lg' variant='outline-secondary'>
+                Back to previous page{' '}
+              </Button>
+        </Link>
+          
+        </div>
       </Container>
     </>
   );
@@ -96,23 +104,37 @@ const Span = styled.span`
   padding: 0 5px;
 `;
 const Basic = styled.div`
+font-size: 16px;
+@media all and (min-width: 800px){
 font-size: 24px;
 padding-left: 10rem
+}
 `
 const Container = styled.div`
+padding: 0 1rem;
+@media all and (min-width: 800px){
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 10rem;
+}
 `;
 const Wrapper = styled.div`
+@media all and (min-width: 800px){
   padding: 3rem;
+}
 `;
 
 const Header = styled.div`
 display: flex;
+flex-flow: row wrap;
+flex-direction: column-reverse;
 justify-content: space-between;
+
+@media all and (min-width: 800px){
 padding-left: 10rem;
 padding-bottom: 3rem;
+flex-flow: nowrap;
+}
 `
 export default CharcterDetails;

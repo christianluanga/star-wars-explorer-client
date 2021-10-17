@@ -13,7 +13,7 @@ const Pagination =  (props: any) => {
   }
   return (
     <div>
-      <_Pagination  size="lg" onClick={handlePagination}>
+      <_Pagination className="d-flex justify-content-center flex-wrap" size="lg" onClick={handlePagination}>
         {items}
       </_Pagination>
     </div>

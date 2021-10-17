@@ -6,7 +6,7 @@ import { screen , render, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing';
 import { getAllPeople } from '../../queries/queries'
 import results from './mock_results'
-import CharacterList from '../../characters/CharacterList';
+import CharacterList from '../../characters/list/CharacterList';
 const mocks = [
     {
       request: {

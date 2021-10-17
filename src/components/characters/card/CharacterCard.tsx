@@ -1,7 +1,8 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
-import { Character } from '../types/types'
-import '../characters/style.css';
+import { Character } from '../../types/types'
+import '../../characters/style.css';
+import './characterCard.css'
 import styled from 'styled-components';
 import { Link } from "@reach/router"
 
@@ -24,7 +25,7 @@ const CharacterCard = ({name, height, gender, mass, homeworld}: Character) => {
             </Card.Text>
         </Card.Body>
         <div className="d-flex justify-content-end mt-2">
-        <Link to={`/character/${name}`}>
+        <Link to={`/character/${name}`} >
             <Button variant="danger">See More</Button>
         </Link>
         </div>

@@ -1,8 +1,8 @@
 import React from "react"
 import { Router } from "@reach/router"
+import CharacterList from "./characters/list/CharacterList"
+import CharacterDetails from "./characters/details/CharacterDetails"
 
-import CharacterList from "./characters/CharacterList"
-import CharacterDetails from "./characters/CharacterDetails"
 
 const _Router = () => {
     return (

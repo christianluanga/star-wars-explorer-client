@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import CharacterCard from './CharacterCard';
+import CharacterCard from '../card/CharacterCard';
 import styled from 'styled-components'
+import './characterList.css'
 import { useQuery } from '@apollo/client';
-import { getAllPeople } from '../queries/queries';
-import { Character } from '../types/types';
-import Pagination from '../shared/Pagination';
-import Loader from '../shared/Loader'
-import Error from '../shared/Error';
+import { getAllPeople } from '../../queries/queries';
+import { Character } from '../../types/types';
+import Pagination from '../../shared/Pagination';
+import Loader from '../../shared/Loader'
+import Error from '../../shared/Error';
 import { Button, FormControl } from 'react-bootstrap';
 import { navigate } from "@reach/router"
 const CharacterList = () => {
@@ -41,7 +42,7 @@ const CharacterList = () => {
     <>
     <header>
     <img src="/img/cover-img.svg" style={{minWidth: "100%"}}/>
-    <div className="d-flex my-5 justify-content-evenly container">
+    <div className="input-control d-flex my-4 justify-content-evenly container">
     <FormControl
     size="lg"
     className="py-3 w-75 pr-5"
@@ -51,13 +52,13 @@ const CharacterList = () => {
       value={character}
       onChange={(evt)=> setCharacter(evt.target.value)}
     />
-    <Button variant="info" className="px-5" onClick={()=>navigate(`/character/${character}`)}>
+    <Button variant="info" className="search-btn px-5" onClick={()=>navigate(`/character/${character}`)}>
       Search
     </Button>
     </div>
     </header>
-    <main style={{padding: "0 10rem"}}>
-      <Container >
+    <main >
+      <Container className="character-container">
           {
             results.map((character : Character, index: number) => <CharacterCard  key={character.name.toLowerCase()} {...character}/>)
           }

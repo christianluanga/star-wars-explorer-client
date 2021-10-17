@@ -11,5 +11,4 @@ const link = new HttpLink({uri: URLS[ENVIRONMENT]})
 const cache = new InMemoryCache()
 
 const client = new ApolloClient({link,cache})
-console.log(ENVIRONMENT)
 export default client

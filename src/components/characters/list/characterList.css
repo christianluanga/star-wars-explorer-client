@@ -1,0 +1,97 @@
+/* main{
+    padding: 0 2rem;
+}
+.character-container{
+    justify-content: center;
+}
+header{
+    overflow: hidden;
+}
+.character-container .card{
+    width: 100%;
+}
+.input-control {
+    flex-flow: wrap;
+}
+.search-btn{
+    padding: 0.8rem!important;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width: 100%;
+    font-size: 20px;
+}
+@media all and (min-width: 800px){
+    main{
+       padding: 0 10rem;
+    }
+    .input-control {
+        flex-flow: nowrap;
+    }
+    .search-btn{
+        padding: 0!important;
+        margin-top: 0rem;
+        margin-left: 1rem;
+        margin-right: 0rem;
+        width: 25%;
+        font-size: 20px;
+    }
+    .character-container{
+        justify-content: start;
+    }
+    .character-container .card{
+        width: fit-content;
+    }
+    .back-btn-large-screen{
+        display: block
+    }
+      .back-btn-small-screen{
+        display: none
+    }
+} */
+main{
+    padding: 0 2rem;
+}
+.character-container{
+    justify-content: center;
+}
+header{
+    overflow: hidden;
+}
+
+.character-container .card{
+    width: 100%;
+}
+.input-control {
+    flex-flow: wrap;
+}
+.search-btn{
+    padding: 0.8rem!important;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width: 100%;
+    font-size: 20px;
+}
+@media all and (min-width: 800px){
+    main{
+       padding: 0 10rem;
+    }
+    .input-control {
+        flex-flow: nowrap;
+    }
+    .search-btn{
+        padding: 0!important;
+        margin-top: 0rem;
+        margin-left: 1rem;
+        margin-right: 0rem;
+        width: 25%;
+        font-size: 20px;
+    }
+    .character-container .card{
+        width: fit-content;
+    }
+    .character-container{
+        justify-content: start;
+    }
+}

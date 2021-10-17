@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - npm install env-cmd
-        - yarn install
+        - yarn install --legacy-peer-deps
     build:
       commands:
         - echo "I am running on $BUILD_ENV"

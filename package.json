@@ -26,9 +26,9 @@
   "scripts": {
     "start": "env-cmd -f .env.production react-scripts start",
     "build": "react-scripts build",
-    "build:prod":"env-cmd -f .env.production react-scripts build",
+    "build:prod": "env-cmd -f .env.production react-scripts build",
     "test": "react-scripts test",
-    "dev": "jest --watch-all",
+    "dev": "react-scripts start",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

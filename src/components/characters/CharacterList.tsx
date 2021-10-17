@@ -41,7 +41,7 @@ const CharacterList = () => {
     <>
     <header>
     <img src="/img/cover-img.svg" style={{minWidth: "100%"}}/>
-    <div className="d-flex mb-5 justify-content-evenly container">
+    <div className="d-flex my-5 justify-content-evenly container">
     <FormControl
     size="lg"
     className="py-3 w-75 pr-5"

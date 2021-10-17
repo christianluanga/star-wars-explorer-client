@@ -1,21 +1,22 @@
 import React from 'react';
-import { Pagination } from 'react-bootstrap';
+import { Pagination as _Pagination} from 'react-bootstrap';
 
-export default (props: any) => {
+const Pagination =  (props: any) => {
     const {active, total, handlePagination} = props
   let items = [];
   for (let number = 1; number <= total; number++) {
     items.push(
-      <Pagination.Item  key={number} active={number === active}>
+      <_Pagination.Item  key={number} active={number === active}>
         {number}
-      </Pagination.Item>
+      </_Pagination.Item>
     );
   }
   return (
     <div>
-      <Pagination  size="lg" onClick={handlePagination}>
+      <_Pagination  size="lg" onClick={handlePagination}>
         {items}
-      </Pagination>
+      </_Pagination>
     </div>
   );
 };
+export default Pagination

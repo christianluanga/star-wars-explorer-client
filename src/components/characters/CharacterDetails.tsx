@@ -1,32 +1,40 @@
 import React from 'react';
-import { useParams } from '@reach/router';
+import { useParams, Link, RouterProps } from '@reach/router';
 import { useQuery } from '@apollo/client';
-import { getPersonByName } from './queries';
+import { getPersonByName } from '../queries/queries';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import Loader from '../shared/Loader'
 import styled from 'styled-components';
 import '../characters/style.css';
-//@ts-ignore
-import { Link } from '@reach/router';
 import MyNavBar from '../shared/NavBar';
 import Error from '../shared/Error';
+import { Film } from '../types/types';
+import CenteredContainer from '../shared/CenteredContainer';
 
-const CharcterDetails = () => {
+const CharcterDetails = (props: RouterProps) => {
   const params = useParams();
   const { error, loading, data } = useQuery(getPersonByName, {
     variables: {
-      name: params.name,
+      name: params.name || "Luke Skywalker",
     },
   });
   if (loading) {
     return <Loader />
   }
   if (error) {
+    console.log(error)
     return <Error />
   }
-  const page = sessionStorage.getItem('page') || '1';
+  if(!data.person) {
+    return (
+    <CenteredContainer styles={{fontSize: '24px', flexDirection: 'column'}}>
+      <p style={{marginRight: '10px'}}> Ooops {' '}<Span>"{ params.name.toUpperCase() }"</Span> is not a valid character name </p>
+      <Link style={{textDecoration: 'none'}} to="/">{'<='} Back to previous page</Link>
+      </CenteredContainer>
+    )
+  }
   const {
-    results: { name, height, mass, gender, homeworld },
+    results: { name, homeworld },
     films,
     birth_year,
   } = data.person;
@@ -36,7 +44,7 @@ const CharcterDetails = () => {
       <Container>
         <Wrapper>
           <Header >
-            <span>Character <Span>{name}</Span></span>
+            <h5 data-testid="character-name" className='d-inline'>Character {name.toUpperCase()}</h5>
             <Link to={'/'}>
               <Button size='lg' variant='outline-secondary'>
                 Back to previous page{' '}
@@ -46,13 +54,13 @@ const CharcterDetails = () => {
           <Basic >
             <p>
               Born on the{' '}
-              <Span>{homeworld.toUpperCase()}</Span> planet in {' '}
-              <Span>{birth_year}, </Span> <h5 className='d-inline'> {name} </h5>
-               appears in a total of {films.length} episodes.
+              <Span>{homeworld}</Span> planet in {' '}
+              <Span>{birth_year}, </Span> <h5 className='d-inline'> {name.toUpperCase()} </h5>
+               appears in a total of {films.length} episode(s).
             </p>
           </Basic>
           <Row>
-            {films.map(({ title, director, release_date, opening_crawl }) => (
+            {films.map(({ title, director, release_date, opening_crawl }: Film) => (
               <Col lg={6} className='mb-4'>
                 <Card className='film-card'>
                   <Card.Header>
@@ -83,8 +91,9 @@ const CharcterDetails = () => {
   );
 };
 const Span = styled.span`
-  font-size: 16px;
+  font-size: inherit;
   font-weight: bold;
+  padding: 0 5px;
 `;
 const Basic = styled.div`
 font-size: 24px;

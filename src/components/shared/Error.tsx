@@ -1,14 +1,16 @@
 import React from 'react'
+
 import styled from 'styled-components'
 //@ts-ignore
 import { Link } from '@reach/router';
+import CenteredContainer from './CenteredContainer';
 
 const Error = ({source = 'other'}) => {
     sessionStorage.removeItem('page')
     return (
-        <Container>
-            <Err>
-                Ooop! Something went wrong
+        <CenteredContainer>
+            <Err data-testid="error">
+                Oops! something went wrong
             </Err>
             {
                 source !== 'home' && <LinkWrapper>
@@ -16,7 +18,7 @@ const Error = ({source = 'other'}) => {
                 </LinkWrapper>
             }
             
-        </Container>
+        </CenteredContainer>
     )
 }
 
@@ -29,11 +31,5 @@ const Err = styled.div`
 `
 const LinkWrapper = styled.div`
 font-size: 24px;
-`
-const Container = styled.div`
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 `
 export default Error

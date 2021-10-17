@@ -6,3 +6,9 @@ export type Character = {
     homeworld: string
 }
 
+export type Film = {
+    title: string
+    director: string
+    release_date: string
+    opening_crawl: string
+}

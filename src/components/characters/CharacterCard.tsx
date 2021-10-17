@@ -3,14 +3,13 @@ import {Card, Button} from 'react-bootstrap'
 import { Character } from '../types/types'
 import '../characters/style.css';
 import styled from 'styled-components';
-//@ts-ignore
 import { Link } from "@reach/router"
 
 const CharacterCard = ({name, height, gender, mass, homeworld}: Character) => {
     return (
-        <Card className="character-card" style={{ width: '19%', height: '25rem', marginLeft: '1%', marginBottom: '3rem'}}>
-        <Card.Body className="mt-3">
-            <Card.Title className="mb-5 text-center"><h3>{name}</h3></Card.Title>
+        <Card data-testid={name} className="character-card mb-4">
+            <Card.Header className="mb-5 text-center"><h3>{name}</h3></Card.Header>
+            <Card.Body className="mt-3">
             <Card.Text className="d-flex justify-content-center">
                 <Item>Heigth: <Span>{height}</Span></Item>
             </Card.Text>

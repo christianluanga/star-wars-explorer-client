@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without error Get a snapshot of the CharacterCard component 1`] = `
+<div
+  className="character-card mb-4 card"
+  data-testid="Luke Skywalker"
+>
+  <div
+    className="mb-5 text-center card-header"
+  >
+    <h3
+      data-testid="Luke Skywalker-name"
+    >
+      Luke Skywalker
+    </h3>
+  </div>
+  <div
+    className="mt-3 card-body"
+  >
+    <p
+      className="d-flex justify-content-center card-text"
+    >
+      <div
+        className="sc-bdfBQB gYSCuo"
+      >
+        Heigth: 
+        <span
+          className="sc-gsTEea dZuxIm"
+          data-testid="Luke Skywalker-height"
+        >
+          172
+        </span>
+      </div>
+    </p>
+    <p
+      className="d-flex justify-content-center card-text"
+    >
+      <div
+        className="sc-bdfBQB gYSCuo"
+      >
+        Mass: 
+        <span
+          className="sc-gsTEea dZuxIm"
+          data-testid="Luke Skywalker-mass"
+        >
+          77
+        </span>
+      </div>
+    </p>
+    <p
+      className="d-flex justify-content-center card-text"
+    >
+      <div
+        className="sc-bdfBQB gYSCuo"
+      >
+        Gender: 
+        <span
+          className="sc-gsTEea dZuxIm"
+          data-testid="Luke Skywalker-gender"
+        >
+          male
+        </span>
+      </div>
+    </p>
+    <p
+      className="d-flex justify-content-center card-text"
+    >
+      <div
+        className="sc-bdfBQB gYSCuo"
+      >
+        Homeworld: 
+        <span
+          className="sc-gsTEea dZuxIm"
+          data-testid="Luke Skywalker-homeworld"
+        >
+          Tatooine
+        </span>
+      </div>
+    </p>
+  </div>
+  <div
+    className="d-flex justify-content-end mt-2"
+  >
+    <a
+      href="/character/Luke Skywalker"
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-danger"
+        disabled={false}
+        type="button"
+      >
+        See More
+      </button>
+    </a>
+  </div>
+</div>
+`;

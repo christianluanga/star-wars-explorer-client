@@ -9,19 +9,19 @@ import { Link } from "@reach/router"
 const CharacterCard = ({name, height, gender, mass, homeworld}: Character) => {
     return (
         <Card data-testid={name} className="character-card mb-4">
-            <Card.Header className="mb-5 text-center"><h3>{name}</h3></Card.Header>
+            <Card.Header className="mb-5 text-center"><h3 data-testid={`${name}-name`}>{name}</h3></Card.Header>
             <Card.Body className="mt-3">
             <Card.Text className="d-flex justify-content-center">
-                <Item>Heigth: <Span>{height}</Span></Item>
+                <Item>Heigth: <Span data-testid={`${name}-height`}>{height}</Span></Item>
             </Card.Text>
             <Card.Text className="d-flex justify-content-center">
-                <Item>Mass: <Span>{mass}</Span></Item>
+                <Item>Mass: <Span data-testid={`${name}-mass`}>{mass}</Span></Item>
             </Card.Text>
             <Card.Text className="d-flex justify-content-center">
-                <Item>Gender: <Span>{gender}</Span></Item>
+                <Item>Gender: <Span data-testid={`${name}-gender`}>{gender}</Span></Item>
             </Card.Text>
             <Card.Text className="d-flex justify-content-center">
-                <Item>Homeworld: <Span>{homeworld}</Span></Item>
+                <Item>Homeworld: <Span data-testid={`${name}-homeworld`}>{homeworld}</Span></Item>
             </Card.Text>
         </Card.Body>
         <div className="d-flex justify-content-end mt-2">

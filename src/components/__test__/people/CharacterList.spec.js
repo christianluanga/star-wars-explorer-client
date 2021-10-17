@@ -34,7 +34,7 @@ const mocks = [
         </MockedProvider>,
       );
       await act(()=> new Promise(resolve => setTimeout(resolve, 10)))
-      //console.log(component.root.findByType('main'))
+      //TODO: make assertions here
     })
   });
   

@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+when installing the node packages please include the --legacy-peer-deps flags e.g run npm install -legacy-peer-deps
+
 ## Available Scripts
 
 In the project directory, you can run:
